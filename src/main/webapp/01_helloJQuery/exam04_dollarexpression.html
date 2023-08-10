@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="hello"></h1>
+<p id="text">안녕하세요 제이쿼리!!</p>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+$(function(){/* 이전체 표현식이 윈도우.onload랑 같음. */
+	var h1 = $('#hello')/* "" '' 더블 따옴표 싱글따옴표 두개다 써도 된다. 제이쿼리는  */
+	h1.css('color','red')
+	h1.html('Hello jQuery'); /* 새미콜론을 써도그만 안써도 그만. */
+	
+	alert( $('#text').text())   /* $('#text').text() 이렇게만 쓰면 값을 얻어오란 것이다. ()안에 (asda)입력하면 값을변경하는거다 */
+}); /* jquery()랑 같은것. 6글자쓰느니 달러 하나로 줄인것.  */ 
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="hello"></h1>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+jQuery(function($){ /*jquery는 javascript의 문법을 간결하게 하는것. */
+	var h1 = $('#hello')
+
+	h1.html('Hello jQuery')
+	h1.text('Hello jQuery')
+});
+</script>
+
+</body>
+</html>

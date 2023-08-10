@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="hello"></h1>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+function hello($){ /* $ 함수를 쓰겠다. jquery 에서 정의한 함수임.*/
+	var h1 = $('#hello') /* var h1 = document.getElemenyByIf('hello') 자바스크립트표현식 */
+	
+	h1.html('Hello jQuery') /*이 두개가 표현식이 같다.  */
+	h1.text('Hello jQuery') /*이 두개가 표현식이 같다.  */
+
+}
+jQuery(hello); /*window.$를 부르는 거랑 같다.  */
+</script>
+</body>
+</html>
+
+<!-- 
+$()
+- 그냥 이름이 $인 함수 그 자체이다. $ 함수를 호출하는 것이다.
+- jQuery 라이브러리 내부를 보면 window.jQuery = window.$ = jQuery 로 동일한 코드이다.
+
+ -->
