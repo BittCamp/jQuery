@@ -11,13 +11,13 @@ $(function(){
 		var user_pw = $('input[name="user_pw"]').val();
 		if(user_pw == ''){
 			alert("패스워드를 입력하세요.");
-			$('input[name=user_pw]').focus();
+			$('input[name="user_pw"]').focus();
 			return false;
 		}
 		var juminno = $('input[name="juminno"]').val();
 		if(!juminno){
 			$('#juminnoDiv').text('주민번호를 입력하세요.');
-			$('input[name=juminno]').focus();
+			$('input[name="juminno"]').focus();
 			return false;
 		}
 		if(!$('input[name="gender"]').is(':checked') ){ 
@@ -35,8 +35,8 @@ $(function(){
 			$('input[name=email]').focus();
 			return false;
 		}
-		var user_pw = $('input[name="url"]').val();
-		if(user_pw == ''){
+		var url = $('input[name="url"]').val();
+		if(url == ''){
 			alert("URL을 입력하세요.");
 			$('input[name=url]').focus();
 			return false;
@@ -58,6 +58,31 @@ $(function(){
 			return false;
 		}
 		
-		return false;
+		//입력한 내용을 화면에 출력.
+		var gender = $('input[name ="gender"]:checked').val();
+		//hobby에서 선택된 값들 가져오기. 배열.
+		var hobby = $('input[name = "hobby"]:checked')
+		var hobby_val = '';//hobby 안에 들어있는 값들의 모임. 
+		hobby.each(function(){                    //자바스크립트기때문에 펑션이 꼭들어간다.//for(var i=0; i< hobby.length; i++){} 와 같은거
+			hobby_val += $(this).val(); // 값을 하비바에 담아라.
+		});
+		
+		var job = $('select[name="job"] > option:selected').val();// 선택된 것들의 값을 가지고 와라.
+		 
+		var result = '<ul>';
+		result += '<li> 아이디 : ' + user_id + '</li>';
+		result += '<li> 비밀번호 : ' + user_pw + '</li>';
+		result += '<li> 주민번호 : ' + juminno + '</li>';
+		result += '<li> 성별 : ' + gender + '</li>';
+		result += '<li> 이메일 : ' + email + '</li>';
+		result += '<li> 홈페이지 : ' + url + '</li>';
+		result += '<li> 핸드폰 : ' + phone + '</li>';
+		result += '<li> 취미 : ' + hobby_val + '</li>';
+		result += '<li> 직업 : ' + job + '</li>';
+		result += '</ul>';
+		
+		$('body').html(result);
+		 
+		 return false;
 	});
 });

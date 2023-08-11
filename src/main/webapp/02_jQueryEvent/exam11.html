@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/event.css">
+</head>
+<body>
+<h1>창 크기 조절 이벤트</h1>
+<div id="result"></div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+$(function(){ // window 객체. 창크기에 따라 보이는 화면 조정되게 하기위해서 쓴다.
+	$(window).resize(function(){
+		$('#result').html('</p>' + $(window).width() + ' x ' + $(window).height() + '</p>');
+	});
+});
+</script>
+</body>
+</html>

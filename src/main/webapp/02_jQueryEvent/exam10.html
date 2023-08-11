@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/event.css">
+</head>
+<body><!-- 안됨. -->
+<h1>회원가입</h1>
+<form name="form1" action="form_ok.html">
+	<div id="input">
+		<h3>당신의 이름은 무엇입니까?</h3>
+		<input type="text" name="user_name" /> 
+		<input type="submit" value="저장하기" class="myButton"/> 
+		<input type="reset" value="다시작성" class="myButton"/> 
+	</div>
+
+</form>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+$(function(){ // $('form[name="form1"]') 아이디도 아니고 클래스도 아니라서 폼안에있는 네임이 이런애를 불러오겠다는 뜻
+	$('form[name="form1"]').submit(function(){
+		if(!confirm('정말로 저장하시겠습니까?')){ // 정말로 저장이 아니면! => 그자리 그대로
+			return false;
+		}
+	});
+	$('input[type="reset"]').click(function(){ 
+		if(!confirm('정말 입력을 취소하겠습니까?')){ 
+			return false;
+		}
+	});
+});
+</script>
+</body>
+</html>

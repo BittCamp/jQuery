@@ -15,7 +15,7 @@ div#juminnoDiv {
 </head>
 <body>
 <h1>회원가입</h1>
-<form name="form1" id="join" action="https://www.naver.com">
+<form name="form1" id="join">
 	<div id="input"> 
 		<h3>아이디</h3>
 		<input type="text" name="user_id"/> 
@@ -58,11 +58,18 @@ div#juminnoDiv {
 		<input type="reset" value="다시작성" class="myButton"/> 
 	</div>
 </form>
-
+	
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../js/member.js">
-
-</script>	
+<script src="../js/member.js"></script>	
 </body>
 </html>
+
+<!-- 
+jQuery 이벤트 정의하는 방법
+$(function(){
+	$("셀렉터").이벤트이름(function(){
+		... 처리 내용 ...
+	});
+});
+ -->
